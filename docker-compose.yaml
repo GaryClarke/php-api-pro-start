@@ -22,6 +22,11 @@ services:
         restart: on-failure
         volumes:
             - flightsdata:/var/lib/mysql
+        environment:
+            MARIADB_ROOT_PASSWORD: secret
+            MARIADB_DATABASE: flights-api
+            MARIADB_USER: user
+            MARIADB_PASSWORD: secret
         ports:
             - "3306:3306"
 volumes:
